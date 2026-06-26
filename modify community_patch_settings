@@ -1,0 +1,7 @@
+[sync.targets.alliance]
+url = "https://battleapi.punkndrublic.us/submit"
+token = "Do Not loose token it is needed for all parts"
+battlelogs = true
+debug = false
+logging = false
+verify_ssl = true

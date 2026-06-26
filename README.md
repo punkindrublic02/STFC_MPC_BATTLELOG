@@ -45,7 +45,7 @@ STFC-Tool access is currently managed through Discord.
 ### Join the Discord
 
 **Discord invite:**  
-`\\\[https://discord.gg/YsXgcrFe7]`
+https://discord.gg/YsXgcrFe7
 
 After joining:
 
@@ -401,7 +401,7 @@ The tool may be demonstrated during Twitch streams through:
 Battle submissions for a live review should be posted in the designated Discord channel.
 
 **Twitch channel:**  
-`\\\[https://www.twitch.tv/punkndrublic01]`
+https://www.twitch.tv/punkndrublic01
 
 \---
 
@@ -462,8 +462,8 @@ When posting screenshots:
 ## Project Links
 
 * **Website:** https://toolbox.punkndrublic.us/my-battles
-* **Discord:** `\\\[[https://discord.gg/YsXgcrFe7]`
-* **Twitch:** `\\\[https://www.twitch.tv/punkndrublic01]`
+* **Discord:** https://discord.gg/YsXgcrFe7
+* **Twitch:**  https://www.twitch.tv/punkndrublic01
 
 
 \---

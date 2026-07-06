@@ -1,5 +1,5 @@
 # STFC-Tool User Guide
-
+You can now self register in the main page.
 STFC-Tool is an independent community battle-analysis tool for **Star Trek Fleet Command**.
 
 It helps players review captured battles, compare crews, inspect officer activity, analyze damage and repairs, and ask questions about their battle history through the website or ChatGPT.

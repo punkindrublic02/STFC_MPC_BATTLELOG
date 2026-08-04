@@ -1,0 +1,298 @@
+{
+  "sources": [
+    {
+      "source_id": "bluemandalorian_vger_2026_02_05",
+      "title": "VGER Challenge Crew Notes",
+      "url": null,
+      "publisher": "BlueMandalorian / STFC Community & Crew",
+      "source_type": "community_note",
+      "notes": "VGER Challenge encounter crew, tech, and focus notes captured from the toolbox Officer Setups page. Updated Feb 5, 2026."
+    },
+    {
+      "source_id": "bluemandalorian_outposts_2026_02_04",
+      "title": "Outpost & Retaliation Attackers",
+      "url": null,
+      "publisher": "BlueMandalorian / STFC Community & Crew",
+      "source_type": "community_note",
+      "notes": "Outpost and retaliation attacker crew notes captured from the toolbox Officer Setups page. Updated Feb 4, 2026."
+    }
+  ],
+  "profiles": [
+    {
+      "profile_id": "pve_vger_silent",
+      "encounter_type": "pve",
+      "applies_to": "vger_silent",
+      "required_context": "target_level,target_variant,player_ship,crew,below_deck,active_tech,cerritos_boost,excelsior_boost,apex_barrier,apex_shred,crit_reduction_sources,repair_sources",
+      "key_stats": "apex_shred,apex_barrier,critical_damage_reduction,critical_chance_reduction,hhp_repair,shp_repair,crit_rate,damage_taken_per_round,hull_damage_taken,rounds_survived",
+      "useful_metrics": "repair_per_round,net_hull_damage_after_repairs,crit_damage_share,apex_barrier_damage_reduction,damage_exchange_ratio",
+      "warning_signals": "low apex shred,missing crit damage reduction,missing crit chance reduction,repair not keeping up,high hull damage early,short survival",
+      "expectation_text": "VGER Silent enemies should be judged around Apex Shred, Critical Damage Reduction, Critical Chance Reduction, Apex Barrier, and HHP/SHP repair sustain. Do not treat them like generic Chen/T'Laan PvE hostiles.",
+      "source_ids": "bluemandalorian_vger_2026_02_05,punkndrublic_game_mechanics",
+      "confidence": 0.85
+    },
+    {
+      "profile_id": "pve_vger_hurak",
+      "encounter_type": "pve",
+      "applies_to": "vger_hurak",
+      "required_context": "target_level,player_ship,crew,below_deck,active_tech,cerritos_boost,excelsior_boost,burning_sources,repair_sources,apex_barrier",
+      "key_stats": "burning_uptime,hhp_repair,shp_repair,apex_barrier,hull_damage_taken,rounds_survived,damage_exchange_ratio",
+      "useful_metrics": "repair_per_round,net_hull_damage_after_repairs,damage_taken_per_round,burning_presence",
+      "warning_signals": "no burning pressure,repair not offsetting hull loss,hostile Apex Barrier spikes,short survival",
+      "expectation_text": "VGER Hurak guidance focuses on Burning, HHP/SHP repair, and Apex Barrier survival. Avoid setups that appear to trigger massive hostile Apex Barrier.",
+      "source_ids": "bluemandalorian_vger_2026_02_05,punkndrublic_game_mechanics",
+      "confidence": 0.85
+    },
+    {
+      "profile_id": "pve_vger_gorn",
+      "encounter_type": "pve",
+      "applies_to": "vger_gorn",
+      "required_context": "target_level,player_ship,crew,below_deck,active_tech,cerritos_boost,excelsior_boost,isolytic_damage,apex_barrier,repair_sources",
+      "key_stats": "isolytic_damage,apex_barrier,hhp_repair,shp_repair,hull_damage_taken,rounds_survived,damage_exchange_ratio",
+      "useful_metrics": "isolytic_damage_share,repair_per_round,net_hull_damage_after_repairs,damage_dealt_per_round",
+      "warning_signals": "low isolytic output,repair not keeping up,low Apex Barrier,short survival",
+      "expectation_text": "VGER Gorn guidance focuses on Isolytic Damage, Apex Barrier, and HHP/SHP repair sustain.",
+      "source_ids": "bluemandalorian_vger_2026_02_05,punkndrublic_game_mechanics",
+      "confidence": 0.85
+    },
+    {
+      "profile_id": "pve_vger_orion",
+      "encounter_type": "pve",
+      "applies_to": "vger_orion",
+      "required_context": "target_level,player_ship,crew,below_deck,active_tech,excelsior_boost,hhp_damage_taken,repair_sources,time_to_kill",
+      "key_stats": "damage_dealt_per_round,hhp_damage_taken,hhp_repair,shp_repair,rounds_survived,damage_exchange_ratio",
+      "useful_metrics": "time_to_kill,net_hhp_damage_after_repairs,repair_per_round,damage_taken_per_round",
+      "warning_signals": "slow kill speed,massive HHP damage,repair overwhelmed,banned Orion crew used",
+      "expectation_text": "VGER Orion is a fast-kill and HHP survival check. Judge whether the crew kills quickly enough while surviving heavy HHP pressure.",
+      "source_ids": "bluemandalorian_vger_2026_02_05,punkndrublic_game_mechanics",
+      "confidence": 0.8
+    },
+    {
+      "profile_id": "pve_vger_fighters",
+      "encounter_type": "pve",
+      "applies_to": "vger_fighters",
+      "required_context": "player_ship,crew,below_deck,active_tech,excelsior_boost,repair_sources,shot_delay_sources",
+      "key_stats": "hhp_repair,shp_repair,shot_delay,damage_taken_per_round,rounds_survived",
+      "useful_metrics": "repair_per_round,net_hull_damage_after_repairs,shots_delayed,damage_exchange_ratio",
+      "warning_signals": "no repair sustain,no shot delay,short survival",
+      "expectation_text": "VGER Fighters guidance favors Excelsior setups with HHP/SHP repair and shot-delay support.",
+      "source_ids": "bluemandalorian_vger_2026_02_05,punkndrublic_game_mechanics",
+      "confidence": 0.8
+    },
+    {
+      "profile_id": "pvp_outpost_retaliation",
+      "encounter_type": "pvp",
+      "applies_to": "outposts",
+      "required_context": "attacker_ship,defender_ship,crew,below_deck,hull_breach,burning,morale,crit_chance,retaliation_context",
+      "key_stats": "hull_breach_presence,burning_presence,morale_presence,crit_rate,damage_dealt_per_round,damage_exchange_ratio",
+      "useful_metrics": "debuff_uptime,crit_damage_share,rounds_to_win,damage_taken_per_round",
+      "warning_signals": "no activation officer,no hull breach or burning when expected,low crit rate,crew not matching attack role",
+      "expectation_text": "Outpost and retaliation attacks should be evaluated by whether the chosen activation package is present: Hull Breach, Burning, Morale, officer ability activation, or crit-chance pressure.",
+      "source_ids": "bluemandalorian_outposts_2026_02_04",
+      "confidence": 0.8
+    }
+  ],
+  "rules": [
+    {
+      "rule_id": "vger_silent_not_generic_pve",
+      "encounter_type": "pve",
+      "applies_to": "vger_silent",
+      "rule_kind": "encounter_scope",
+      "rule_text": "VGER Silent enemies should not be judged as generic Chen/T'Laan PvE hostiles; prioritize Apex Shred, crit reduction, Apex Barrier, and repair sustain.",
+      "priority": 5,
+      "source_id": "bluemandalorian_vger_2026_02_05",
+      "confidence": 0.85
+    },
+    {
+      "rule_id": "vger_silent_tech_context_required",
+      "encounter_type": "pve",
+      "applies_to": "vger_silent",
+      "rule_kind": "context_required",
+      "rule_text": "For Silent comparisons, include active tech and boosts such as Quantum Slipstream, Chaos Deflector, Agony Booth, Godsend, Cerritos Boost, and Excelsior Boost.",
+      "priority": 10,
+      "source_id": "bluemandalorian_vger_2026_02_05",
+      "confidence": 0.85
+    },
+    {
+      "rule_id": "vger_hurak_avoid_apex_barrier_spikes",
+      "encounter_type": "pve",
+      "applies_to": "vger_hurak",
+      "rule_kind": "warning",
+      "rule_text": "Hurak notes warn against officers that appear to trigger massive Apex Barrier on the hostile.",
+      "priority": 10,
+      "source_id": "bluemandalorian_vger_2026_02_05",
+      "confidence": 0.8
+    },
+    {
+      "rule_id": "vger_orion_fast_kill_hhp",
+      "encounter_type": "pve",
+      "applies_to": "vger_orion",
+      "rule_kind": "battle_goal",
+      "rule_text": "Orion guidance is a fast-kill and HHP survival check; do not compare it cleanly against longer sustain encounters without noting the difference.",
+      "priority": 10,
+      "source_id": "bluemandalorian_vger_2026_02_05",
+      "confidence": 0.8
+    },
+    {
+      "rule_id": "outpost_activation_package",
+      "encounter_type": "pvp",
+      "applies_to": "outposts",
+      "rule_kind": "crew_role",
+      "rule_text": "Outpost crews should be selected by activation role: Hull Breach, Burning, Morale, officer ability activation, or critical chance pressure.",
+      "priority": 10,
+      "source_id": "bluemandalorian_outposts_2026_02_04",
+      "confidence": 0.8
+    }
+  ],
+  "recommended_crews": [
+    {
+      "crew_id": "vger_silent_trip_annorax_suder",
+      "encounter_type": "pve",
+      "applies_to": "vger_silent",
+      "ship_requirement": "VGER Challenge ship appropriate to player build",
+      "captain": "Trip Tucker",
+      "officer_1": "Annorax",
+      "officer_2": "Ensign Suder",
+      "below_deck": "WoK Carol Marcus, PIC Hugh, WoK Joachim, B'Elanna Torres, SNW Nurse Chapel, Harry Kim, WoK McCoy, Masriad Vael, Hugh, WoK Saavik, Neelix, Rachel Garrett",
+      "purpose": "Silent VGER setup focused on Apex Shred, crit reduction, Apex Barrier, and HHP/SHP repair sustain. Swaps: SNW M'Benga, Kathryn Janeway, Seska.",
+      "source_id": "bluemandalorian_vger_2026_02_05",
+      "confidence": 0.85
+    },
+    {
+      "crew_id": "vger_hurak_suder_annorax_seska",
+      "encounter_type": "pve",
+      "applies_to": "vger_hurak",
+      "ship_requirement": "VGER Challenge ship appropriate to player build",
+      "captain": "Ensign Suder",
+      "officer_1": "Annorax",
+      "officer_2": "Seska",
+      "below_deck": "B'Elanna Torres, Harry Kim, Neelix, PIC Hugh, WoK Carol Marcus, SNW Nurse Chapel, Hugh, Masriad Vael, WoK Saavik, Quasi, WoK Joachim, Zeph",
+      "purpose": "Hurak setup focused on Burning, HHP/SHP repair, and Apex Barrier.",
+      "source_id": "bluemandalorian_vger_2026_02_05",
+      "confidence": 0.85
+    },
+    {
+      "crew_id": "vger_gorn_suder_annorax_seska",
+      "encounter_type": "pve",
+      "applies_to": "vger_gorn",
+      "ship_requirement": "VGER Challenge ship appropriate to player build",
+      "captain": "Ensign Suder",
+      "officer_1": "Annorax",
+      "officer_2": "Seska",
+      "below_deck": "WoK Joachim, Harry Kim, PIC Hugh, B'Elanna Torres, WoK Carol Marcus, SNW Nurse Chapel, Masriad Vael, WoK Saavik, Hugh, Quasi, Neelix, Alok Sahar",
+      "purpose": "Gorn setup focused on Isolytic Damage, Apex Barrier, and HHP/SHP repair. Swaps: Pike, Kathryn Janeway, Ent-E Picard.",
+      "source_id": "bluemandalorian_vger_2026_02_05",
+      "confidence": 0.85
+    },
+    {
+      "crew_id": "vger_orion_georgiou_chang_picard",
+      "encounter_type": "pve",
+      "applies_to": "vger_orion",
+      "ship_requirement": "VGER Challenge ship appropriate to player build",
+      "captain": "S31 Georgiou",
+      "officer_1": "Chang",
+      "officer_2": "Ent-E Picard",
+      "below_deck": "PIC Hugh, Neelix, B'Elanna Torres, SNW Nurse Chapel, WoK Joachim, WoK Carol Marcus, Harry Kim, WoK McCoy, V'ger Ilia, TMP Uhura, WoK Saavik, Quasi",
+      "purpose": "Orion setup focused on fast kill speed and surviving massive HHP damage. Swaps: Ensign Suder, Leslie, Moreau, Harcourt Fenton Mudd, Pike.",
+      "source_id": "bluemandalorian_vger_2026_02_05",
+      "confidence": 0.8
+    },
+    {
+      "crew_id": "vger_fighters_eurydice_pike_suder",
+      "encounter_type": "pve",
+      "applies_to": "vger_fighters",
+      "ship_requirement": "Excelsior",
+      "captain": "Eurydice",
+      "officer_1": "Pike",
+      "officer_2": "Ensign Suder",
+      "below_deck": "Harry Kim, PIC Hugh, B'Elanna Torres, WoK Carol Marcus, WoK Joachim, Neelix",
+      "purpose": "VGER Fighters setup focused on HHP/SHP repair and shot delay. Swaps: Seska, Chang.",
+      "source_id": "bluemandalorian_vger_2026_02_05",
+      "confidence": 0.8
+    },
+    {
+      "crew_id": "outpost_lorca_five_khan",
+      "encounter_type": "pvp",
+      "applies_to": "outposts",
+      "ship_requirement": "outpost/retaliation attacker",
+      "captain": "Gabriel Lorca",
+      "officer_1": "Five of Eleven",
+      "officer_2": "Khan",
+      "below_deck": "SNW D'chok, SNW Scotty, SNW Black Ops Chapel, WoK Joachim, SNW Pelia, SNW Hemmer",
+      "purpose": "Hull Breach and critical damage pressure for outpost/retaliation attacks.",
+      "source_id": "bluemandalorian_outposts_2026_02_04",
+      "confidence": 0.8
+    },
+    {
+      "crew_id": "outpost_georgiou_five_ash",
+      "encounter_type": "pvp",
+      "applies_to": "outposts",
+      "ship_requirement": "outpost/retaliation attacker",
+      "captain": "Philipa Georgiou",
+      "officer_1": "Five of Eleven",
+      "officer_2": "Ash Tyler",
+      "below_deck": "SNW Scotty, SNW Black Ops Chapel, WoK Joachim, SNW Pelia, Odo, The Doctor",
+      "purpose": "Burning and mitigation pressure for outpost/retaliation attacks.",
+      "source_id": "bluemandalorian_outposts_2026_02_04",
+      "confidence": 0.8
+    },
+    {
+      "crew_id": "outpost_gorkon_five_kirk",
+      "encounter_type": "pvp",
+      "applies_to": "outposts",
+      "ship_requirement": "outpost/retaliation attacker",
+      "captain": "Gorkon",
+      "officer_1": "Five of Eleven",
+      "officer_2": "Kirk",
+      "below_deck": "SNW D'chok, SNW Black Ops Chapel, WoK Joachim, PIC Hugh, Badgey, Mariner",
+      "purpose": "Critical chance and Hull Breach pressure for outpost/retaliation attacks.",
+      "source_id": "bluemandalorian_outposts_2026_02_04",
+      "confidence": 0.75
+    }
+  ],
+  "stat_sources": [
+    {
+      "stat_source_id": "vger_apex_barrier_toolbox",
+      "stat_name": "apex_barrier",
+      "source_name": "STFC Toolbox Game Mechanics",
+      "scope": "pve,pvp",
+      "applies_to": "VGER Challenge and other Apex Barrier encounters",
+      "ships": null,
+      "rule_text": "Apex Barrier is a defender-side damage reduction stat. In VGER comparisons, check both Apex Barrier and opposing Apex Shred before making crew conclusions.",
+      "source_id": "punkndrublic_game_mechanics",
+      "confidence": 0.85
+    },
+    {
+      "stat_source_id": "vger_apex_shred_toolbox",
+      "stat_name": "apex_shred",
+      "source_name": "STFC Toolbox Game Mechanics",
+      "scope": "pve,pvp",
+      "applies_to": "VGER Silent and other Apex Barrier encounters",
+      "ships": null,
+      "rule_text": "Apex Shred is the attacker-side counter pressure into Apex Barrier. Silent guidance calls it out as a key stat.",
+      "source_id": "punkndrublic_game_mechanics",
+      "confidence": 0.85
+    },
+    {
+      "stat_source_id": "vger_crit_reduction_silent",
+      "stat_name": "critical_damage_reduction",
+      "source_name": "VGER Silent Crew Notes",
+      "scope": "pve",
+      "applies_to": "vger_silent",
+      "ships": null,
+      "rule_text": "Silent guidance calls for Critical Damage Reduction and Critical Chance Reduction checks alongside Apex Shred and repair sustain.",
+      "source_id": "bluemandalorian_vger_2026_02_05",
+      "confidence": 0.8
+    },
+    {
+      "stat_source_id": "vger_repair_sustain",
+      "stat_name": "hhp_shp_repair",
+      "source_name": "VGER Challenge Crew Notes",
+      "scope": "pve",
+      "applies_to": "vger_hurak,vger_gorn,vger_silent,vger_fighters",
+      "ships": null,
+      "rule_text": "VGER setups frequently call out HHP/SHP repair sustain; compare repair per round and net hull damage after repairs.",
+      "source_id": "bluemandalorian_vger_2026_02_05",
+      "confidence": 0.8
+    }
+  ]
+}

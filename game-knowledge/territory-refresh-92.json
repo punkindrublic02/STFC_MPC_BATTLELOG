@@ -1,0 +1,168 @@
+{
+  "sources": [
+    {
+      "source_id": "scopely_update_92_territory_refresh_2026_06_25",
+      "title": "Update 92 Feature Highlight: Territory Refresh",
+      "url": "https://startrekfleetcommand.com/news/update-92-feature-highlight-territory-refresh/",
+      "publisher": "Scopely",
+      "source_type": "official_news",
+      "notes": "Official Update 92 Territory Refresh feature highlight. Added when the live STFC data version 7c7f4e58-89af-4b80-8f7f-13a8141632c0 was pulled from stfc.space on 2026-06-25."
+    },
+    {
+      "source_id": "stfc_space_live_data_2026_06_25",
+      "title": "STFC.space live game data",
+      "url": "https://data.stfc.space/",
+      "publisher": "STFC.space",
+      "source_type": "game_data",
+      "notes": "Live game-data pull containing Quantum Adjudicator, Quantum Guardian, Quantum Tesseract, Isogenite Geode, Raw Isogenite, and Quantum Tesseract Directives entities."
+    }
+  ],
+  "profiles": [
+    {
+      "profile_id": "territory_quantum_adjudicator",
+      "encounter_type": "territory_hostile",
+      "applies_to": "quantum_adjudicator",
+      "required_context": "target_level,target_star_grade,target_hull_id,target_ship_type,player_ship,ship_grade,crew,below_deck,forbidden_tech,combat_tree,territory_services,critical_mitigation,isolytic_defense,apex_barrier,apex_shred",
+      "key_stats": "critical_mitigation,critical_damage_taken,crit_rate_taken,isolytic_damage_share,isolytic_defense,apex_barrier,apex_shred,shield_mitigation,hull_damage_taken,damage_exchange_ratio,rounds",
+      "useful_metrics": "kills_per_repair,net_hull_damage_after_repairs,damage_taken_per_round,damage_dealt_per_round,crit_damage_share,iso_damage_share,apex_barrier_damage_reduction",
+      "warning_signals": "wrong_ship_family_or_grade,zero_shield_mitigation,high_crit_damage_taken,low_critical_mitigation,low_isolytic_defense,short_survival,quality_bucket_bad",
+      "expectation_text": "Quantum Adjudicators are territory hostiles and should not be compared as generic PvE targets. Judge them by survivability, critical mitigation, isolytic pressure, Apex Barrier/Shred interaction, and ship eligibility before ranking raw damage.",
+      "source_ids": "scopely_update_92_territory_refresh_2026_06_25,stfc_space_live_data_2026_06_25",
+      "confidence": 0.85
+    },
+    {
+      "profile_id": "territory_quantum_guardian",
+      "encounter_type": "territory_hostile",
+      "applies_to": "quantum_guardian",
+      "required_context": "spawn_source,target_level,target_star_grade,player_ship,crew,below_deck,loot,rewards,critical_mitigation,isolytic_defense,apex_barrier,apex_shred",
+      "key_stats": "time_to_kill,damage_taken_per_round,hull_damage_taken,loot_value,crit_rate_taken,isolytic_damage_share,damage_exchange_ratio",
+      "useful_metrics": "loot_per_hull_damage,loot_per_repair,kill_success_rate,net_hull_damage_after_repairs,damage_dealt_per_round",
+      "warning_signals": "rare_spawn_not_identified,loot_missing,wrong_encounter_family,high_hull_loss_for_low_reward",
+      "expectation_text": "Quantum Guardians are territory rare-spawn style hostiles. Treat them as reward-efficiency encounters: identify spawn/source, parse loot, and compare crews by kill safety and loot per hull cost.",
+      "source_ids": "scopely_update_92_territory_refresh_2026_06_25,stfc_space_live_data_2026_06_25",
+      "confidence": 0.8
+    },
+    {
+      "profile_id": "territory_quantum_tesseract",
+      "encounter_type": "territory_armada",
+      "applies_to": "quantum_tesseract",
+      "required_context": "armada_level,armada_star_grade,solo_or_group,participant_count,participant_ship,crew,below_deck,team_damage_share,critical_mitigation,isolytic_defense,apex_barrier,apex_shred,loot",
+      "key_stats": "participant_damage_share,team_damage_dealt,damage_taken_per_round,crit_damage_taken,isolytic_damage_share,hull_repair_per_round,participant_survival,loot",
+      "useful_metrics": "damage_share_rank,team_success_rate,loot_per_participant,damage_exchange_ratio,participant_survival_rate,repair_per_round",
+      "warning_signals": "participant_table_missing,solo_group_misclassified,loot_missing,one_ship_summary_used_as_team_summary",
+      "expectation_text": "Quantum Tesseracts should use armada participant analysis, not single-ship hostile scoring. Compare contribution, survival, team damage share, and rewards separately.",
+      "source_ids": "scopely_update_92_territory_refresh_2026_06_25,stfc_space_live_data_2026_06_25",
+      "confidence": 0.85
+    },
+    {
+      "profile_id": "territory_isogenite_mining",
+      "encounter_type": "territory_mining",
+      "applies_to": "isogenite_geode_mining",
+      "required_context": "territory_name,mine_type,raw_isogenite_grade,geode_drops,ship,mining_rate,protected_cargo,territory_services,loot",
+      "key_stats": "raw_isogenite_per_hour,isogenite_geode_rate,protected_cargo,cargo_lost,service_bonus,refinery_output",
+      "useful_metrics": "geodes_per_hour,raw_isogenite_per_hour,protected_cargo_utilization,loot_per_trip,refinery_value",
+      "warning_signals": "loot_page_missing,territory_not_identified,mining_time_missing,protected_cargo_overflow",
+      "expectation_text": "Territory Isogenite mining should be ranked by resource output and risk, not battle damage. Capture loot/refinery rows and mining context.",
+      "source_ids": "scopely_update_92_territory_refresh_2026_06_25,stfc_space_live_data_2026_06_25",
+      "confidence": 0.8
+    }
+  ],
+  "rules": [
+    {
+      "rule_id": "territory_quantum_not_generic_hostile",
+      "encounter_type": "territory_hostile",
+      "applies_to": "quantum_adjudicator,quantum_guardian",
+      "rule_kind": "encounter_scope",
+      "rule_text": "Quantum territory hostiles must be classified before crew ranking. Do not mix Quantum Adjudicator or Quantum Guardian evidence with generic PvE hostile cohorts.",
+      "priority": 5,
+      "source_id": "scopely_update_92_territory_refresh_2026_06_25",
+      "confidence": 0.85
+    },
+    {
+      "rule_id": "territory_tesseract_requires_participants",
+      "encounter_type": "territory_armada",
+      "applies_to": "quantum_tesseract",
+      "rule_kind": "context_required",
+      "rule_text": "Quantum Tesseract analysis requires participant rows. A single ship summary describes only that participant and must not be used as the whole armada result.",
+      "priority": 5,
+      "source_id": "scopely_update_92_territory_refresh_2026_06_25",
+      "confidence": 0.9
+    },
+    {
+      "rule_id": "territory_adjudicator_check_ship_eligibility",
+      "encounter_type": "territory_hostile",
+      "applies_to": "quantum_adjudicator",
+      "rule_kind": "preflight_check",
+      "rule_text": "Before recommending a crew against Quantum Adjudicators, check ship family, ship grade, target grade, and any observed instant-fail or extreme-survival warnings in battle logs.",
+      "priority": 10,
+      "source_id": "scopely_update_92_territory_refresh_2026_06_25",
+      "confidence": 0.75
+    },
+    {
+      "rule_id": "territory_mining_requires_loot_context",
+      "encounter_type": "territory_mining",
+      "applies_to": "isogenite_geode_mining",
+      "rule_kind": "context_required",
+      "rule_text": "Territory mining recommendations require loot/mining context such as Raw Isogenite grade, Isogenite Geode drops, mining duration, protected cargo, and active services.",
+      "priority": 10,
+      "source_id": "scopely_update_92_territory_refresh_2026_06_25",
+      "confidence": 0.85
+    },
+    {
+      "rule_id": "territory_services_are_time_sensitive",
+      "encounter_type": "territory_service",
+      "applies_to": "dynamic_seasonal_services",
+      "rule_kind": "timeliness",
+      "rule_text": "Territory service recommendations are time-sensitive. Store service name, territory, tier, season, active timestamp, and source confidence before using them in alliance planning.",
+      "priority": 20,
+      "source_id": "scopely_update_92_territory_refresh_2026_06_25",
+      "confidence": 0.8
+    }
+  ],
+  "stat_sources": [
+    {
+      "stat_source_id": "territory_critical_mitigation",
+      "stat_name": "critical_mitigation",
+      "source_name": "Update 92 Territory Refresh",
+      "scope": "territory_hostile,territory_armada,pvp",
+      "applies_to": "Quantum Adjudicator, Quantum Guardian, Quantum Tesseract, PvP",
+      "ships": null,
+      "rule_text": "Critical mitigation should be tracked when comparing Update 92 quantum encounters because critical damage pressure is a central survival risk.",
+      "source_id": "scopely_update_92_territory_refresh_2026_06_25",
+      "confidence": 0.85
+    },
+    {
+      "stat_source_id": "territory_isolytic_defense",
+      "stat_name": "isolytic_defense",
+      "source_name": "Update 92 Territory Refresh",
+      "scope": "territory_hostile,territory_armada",
+      "applies_to": "Quantum territory encounters",
+      "ships": null,
+      "rule_text": "Isolytic Defense should be captured and compared separately from standard mitigation for Quantum territory encounters.",
+      "source_id": "scopely_update_92_territory_refresh_2026_06_25",
+      "confidence": 0.85
+    },
+    {
+      "stat_source_id": "territory_apex_barrier_shred",
+      "stat_name": "apex_barrier_apex_shred",
+      "source_name": "Update 92 Territory Refresh",
+      "scope": "territory_hostile,territory_armada",
+      "applies_to": "Quantum territory encounters",
+      "ships": null,
+      "rule_text": "Apex Barrier and Apex Shred should be included with damage, hull loss, and survivability metrics so high-damage crews are not over-ranked when they fail survival checks.",
+      "source_id": "scopely_update_92_territory_refresh_2026_06_25",
+      "confidence": 0.85
+    },
+    {
+      "stat_source_id": "territory_isogenite_geode_output",
+      "stat_name": "isogenite_geode_output",
+      "source_name": "STFC.space live game data",
+      "scope": "territory_mining",
+      "applies_to": "Territory Isogenite mining",
+      "ships": null,
+      "rule_text": "Mining output comparisons should separate Raw Isogenite grade from Isogenite Geode drops and refinery value.",
+      "source_id": "stfc_space_live_data_2026_06_25",
+      "confidence": 0.8
+    }
+  ]
+}

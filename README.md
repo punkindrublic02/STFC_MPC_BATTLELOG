@@ -33,13 +33,13 @@ STFC PC Client
 PC Mod / Network Capture
       |
       v
-TypeScript Web and Local Sync Services
+TypeScript Web and Sync Services
       |
       v
 Parser and Data Enrichment
       |
       v
-Local SQLite Databases
+SQLite Databases
       |
       +----------------------+
       |                      |
